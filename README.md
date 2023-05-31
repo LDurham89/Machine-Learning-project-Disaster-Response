@@ -1,13 +1,13 @@
-Udacity Datascience Nanodegree Project 2: Disaster Response Pipelines
+# Udacity Datascience Nanodegree Project 2: Disaster Response Pipelines
 
-Project description: 
+__Project description:__
 
-File descriptions:
+__File descriptions:__
 
 
-The main files of interest for this project are:
+__The main files of interest for this project are:__
 
-Packages used: There are quite a few packages used in this project.
+__Packages used: There are quite a few packages used in this project.__
 
 Some are standard tools for analysing and visualising numerical data:
 
@@ -37,8 +37,8 @@ Finally, the package below is useful for export tables. Please note you will nee
 
 plotly.figure_factory
 
-Summary of the results & issues with analysis: 
+__Summary of the results & issues with analysis:__ 
 
-Contact information: The maintainer of this project is me - Laurence Durham - contactable at laurence.durham89@gmail.com
+__Contact information:__ The maintainer of this project is me - Laurence Durham - contactable at laurence.durham89@gmail.com
 
-Necessary acknowledgments: 
+__Necessary acknowledgments:__
