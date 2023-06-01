@@ -46,26 +46,63 @@ I had some issues with using the IDE provided by Udacity due to the versions of 
 
 __Packages used: There are quite a few packages used in this project.__
 
-Some are standard tools for analysing and visualising numerical data:
+This project uses packages for a wide variety of tasks.
 
-pandas
-numpy
-matplotlib.pyplot
-seaborn
+First are some of the most common general data processing packages, plus re which is useful for editting data:
 
-Other are tools for analysing text data, mostly derived from nltk:
+- pandas
+- numpy
+- re
 
-nltk
-nltk.corpus.stopwords
-nltk.tokenize.word_tokenize
-nltk.stem.WordNetLemmatizer
+The ETL pipeline also used packages to work with SQL:
+- sqlite3: allows us to work in SQL
+- sqlalchemy - create_engine: creates a bridge to the location where we want to save a database or access an existing database
 
-Some packages were used for specific data preprocessing tasks:
+The ML pipeline uses several NLTK packages to develop the tokenization function and preprocess data:
 
-re: this was used to format text data and remove punctuation from numerical values before converting to float
-string: provides a convenient way to remove punctuation
+- nltk.corpus - stopwords
+- nltk.tokenize - word_tokenize
+- nltk.stem - WordNetLemmatizer
+
+The ML pipeline then uses the following sklearn packages to build the pipleine itself and train the model:
+
+- Pipeline: This provides the basic architecture for building a pipeline
+- train_test_split: Splits our data into testing and training subsets
+- CountVectorizer
+- TfidfTransformer
+- MultiOutputClassifier: This is a class that allows us to run a model that performs multiple classification tasks in parellel
+- RandomForestClassifier: This is the estimator that we use with the MultiOutputClassifier object
+- classification_report: The classification report allows us to evaluate the model by providing recall, precision and f1 scores
+
+The last package used in the ML pipeline saves our model:
+
+- pickle: saves the trained model as a pickle file
+
+The last set of packages allows the app to runa nd display the visualisations contained in the app
+
+- json
+- plotly
+- flask - Flask
+- flask - render_template, request, jsonify
+- plotly.graph_objs - Bar
+- joblib
+
+__Model performance and difficulties faced:__ 
+
+The dataset provided for this project was an interesting one, which provided some real challenges. The main challenge was that the data tended to be unbalanced across most of the categories provided. For some categories this wasn't so bad - e.g. the 'aid related' category applied to about 40% of observations hence allowing enough variation to make decent estimates. On the other hand, the 'child alone' category only had zero values. This meant that the model never saw any messages about children alone and - as you might expect - returned zeros for all measures of the classification report. To some extent this is a tautology - the model made no positive predicitons thus didn't get any right - but the point remains that the model isn't able to identify messges about children alone. 
+
+To some extent this imbalance could be a result of having so many columns. For example, most of the infrastructure related columns were very imbalanced with very few positive cases. While the project rubrik required a model that performs classification for all 36 categories, I think that the model would be more useful if all of the infrastructure related columns were reduced to one 'infrastructure' column. The model would then have a higher absolute number of positive cases to learn from. Admittedly it would be better if were possible to distinguish between each category. If I were doing a similar project in a professional context then I would be keen to investigate ways to secure more data to train the model on, including leveraging any partnerships with other organisations in the sector.
+
+When looking at the classification report it appears that model performance is closely related to the numner of positive values in each category.
+The model did well at identifying if messages were relevant to a disaster and (to a lesser extent) if they were aid related - as reflected in the f1 scores close to 1. However, when getting down to individual types of aid required or specific infrastructure issues there tended to be less than 5% positive cases per category. It is also these categories where the model got low f1 scores, for example see thr scores for 'clothing', 'money' and 'missing people'.
 
 
 __Contact information:__ The maintainer of this project is me - Laurence Durham - contactable at laurence.durham89@gmail.com
 
 __Necessary acknowledgments:__
+Udacity GPT was particularly helpful for finding bugs in my code and also navigating the Flask IDE provided by Udacity.
+
+The statology resource below was a useful reference for interpreting the classification reports:
+https://www.statology.org/sklearn-classification-report/
+
+
