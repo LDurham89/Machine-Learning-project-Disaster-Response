@@ -11,18 +11,22 @@ The end result is an app that visualises the data and uses the model developed i
 
 __File descriptions:__ This project contains several files. The first two files are jupyter notebooks that work through the process of building the ETL and machine learning pipeline, while offering some narrative explaining any difficulties faced and decisions made. These file are:
 
-ETL Pipeline Preparation.ipynb (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/ETL%20Pipeline%20Preparation.ipynb) - This outlines how the ETL pipeline is made and presents functions that can be used in the web app 
-ML Pipeline Preparation.ipynb (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/ML%20Pipeline%20Preparation.ipynb) - This file does the same for the machine learning pipeline.
+- ETL Pipeline Preparation.ipynb (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/ETL%20Pipeline%20Preparation.ipynb) - This outlines how the ETL pipeline is made and presents functions that can be used in the web app 
+
+- ML Pipeline Preparation.ipynb (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/ML%20Pipeline%20Preparation.ipynb) - This file does the same for the machine learning pipeline.
 
 The next group of files presents the scripts that can be run in Flask. 
 
-process_data.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/process_data.py) - This executes the functions presented in the ETL Pipeline Preparation.ipynb file.
-train_classifier.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/train_classifier.py) - This executes the functions presented in the ML Pipeline Preparation.ipynb file.
-run.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/run.py) - This file provideds script that runs the web app
+- process_data.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/process_data.py) - This executes the functions presented in the ETL Pipeline Preparation.ipynb file.
+
+- train_classifier.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/train_classifier.py) - This executes the functions presented in the ML Pipeline Preparation.ipynb file.
+
+- run.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/run.py) - This file provideds script that runs the web app
 
 Lastly there are two datset files:
-disaster_messages.csv (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/disaster_messages.csv) - this file contains all of the messages that the model wil be trained on
-disaster_categories.csv (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/disaster_categories.csv) - here we have data showing which categories each messages relates to
+- disaster_messages.csv (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/disaster_messages.csv) - this file contains all of the messages that the model wil be trained on
+
+- disaster_categories.csv (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/disaster_categories.csv) - here we have data showing which categories each messages relates to
 
 __Usage instructions:__  
 
