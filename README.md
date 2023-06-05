@@ -45,7 +45,9 @@ python app/run.py
 
 Please note that the files will need to be run in this order.
 
-I had some issues with using the IDE provided by Udacity due to the versions of certain packages. As a result to run these files please make sure you are using an up-to-date versions of the joblib and classification_report packages.
+I had some issues with using the IDE provided by Udacity due to the versions of certain packages. As a result to run these files please make sure you are using up-to-date versions of the joblib and classification_report packages.
+
+I'd also like to note that GridSearchCV can take a significant amount of time to run. As a result in my code I only pass one parameter to the model, but I have included other parameters commented out - just to show how I would have run Grid Search if I had a more powerful machine. 
 
 
 __Packages used: There are quite a few packages used in this project.__
@@ -76,6 +78,7 @@ The ML pipeline then uses the following sklearn packages to build the pipleine i
 - TfidfTransformer
 - MultiOutputClassifier: This is a class that allows us to run a model that performs multiple classification tasks in parellel
 - RandomForestClassifier: This is the estimator that we use with the MultiOutputClassifier object
+- GridSearchCV: used to find model parameters that optimise performance
 - classification_report: The classification report allows us to evaluate the model by providing recall, precision and f1 scores
 
 The last package used in the ML pipeline saves our model:
@@ -93,7 +96,7 @@ The last set of packages allows the app to runa nd display the visualisations co
 
 __Model performance and difficulties faced:__ 
 
-The dataset provided for this project was an interesting one, which provided some real challenges. The main challenge was that the data tended to be unbalanced across most of the categories provided. For some categories this wasn't so bad - e.g. the 'aid related' category applied to about 40% of observations hence allowing enough variation to make decent estimates. On the other hand, the 'child alone' category only had zero values. This meant that the model never saw any messages about children alone and - as you might expect - returned zeros for all measures of the classification report. To some extent this is a tautology - the model made no positive predicitons thus didn't get any right - but the point remains that the model isn't able to identify messges about children alone. 
+The dataset provided for this project was an interesting one, which provided some real challenges. The main challenge was that the data tended to be unbalanced across most of the categories provided. For some categories this wasn't so bad - e.g. the 'aid related' category applied to about 40% of observations hence allowing enough variation to make decent estimates. On the other hand, the 'child alone' category only had zero values. This meant that the model never saw any messages about children alone and - as you might expect - returned zeros for all measures of the classification report. To some extent this is a tautology - the model made no positive predicitons thus didn't get any correct positive predictions - but the point remains that the model isn't able to identify messges about children alone. 
 
 To some extent this imbalance could be a result of having so many columns. For example, most of the infrastructure related columns were very imbalanced with very few positive cases. While the project rubrik required a model that performs classification for all 36 categories, I think that the model would be more useful if all of the infrastructure related columns were reduced to one 'infrastructure' column. The model would then have a higher absolute number of positive cases to learn from. Admittedly it would be better if were possible to distinguish between each category. If I were doing a similar project in a professional context then I would be keen to investigate ways to secure more data to train the model on, including leveraging any partnerships with other organisations in the sector.
 
