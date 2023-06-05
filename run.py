@@ -40,7 +40,6 @@ model = joblib.load("models/NLPmodel.pkl")
 def index():
     
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
     
     X = df.drop(['id', 'message', 'original', 'genre'], axis=1)
     X['related'] = X['related'].map({0: 0, 1: 1, 2: 1})
@@ -53,11 +52,11 @@ def index():
     Q= Q.rename_axis('Category')
     Q.columns = ['Percentage']
                 
-    #genre_counts = df.groupby('genre').count()['message']
-    #genre_names = list(genre_counts.index)
+    g_groups = df.groupby('genre').sum()['request']
+    genre_names = list(g_groups.index)
     
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
+    
     graphs = [
         {
             'data': [
@@ -76,7 +75,26 @@ def index():
                     'title': "Category"
                 }
             }
-        }
+        },
+        
+    {
+            'data': [
+                Bar(
+                    x=genre_names,
+                    y=g_groups
+                )
+            ],
+
+            'layout': {
+                'title': 'Number of requests by genre of message',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Genre name"
+                }
+            }
+        }         
     ]
     
     # encode plotly graphs in JSON
