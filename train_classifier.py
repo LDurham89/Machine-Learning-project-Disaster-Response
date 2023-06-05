@@ -48,10 +48,17 @@ def tokenize(text):
 def build_model():   
     pipeline = Pipeline([
     ('vect', CountVectorizer(tokenizer = tokenize)),
-    ('tfid', TfidfTransformer(smooth_idf=False)),
+    ('tfid', TfidfTransformer()),
     ('clf', MultiOutputClassifier(RandomForestClassifier()))])
     
-    return pipeline  #note will need to state this as arg for eval_model
+    parameters = {
+    #'clf__estimator__bootstrap': [True, False],
+    #'clf__estimator__criterion': ['gini', 'entropy', 'log_loss'],
+    'tfidf__smooth_idf': [True, False]
+}
+    cv = GridSearchCV(pipeline, param_grid=parameters) 
+    
+    return cv   
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
