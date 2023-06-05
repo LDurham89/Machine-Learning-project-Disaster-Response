@@ -17,11 +17,11 @@ __File descriptions:__ This project contains several files. The first two files 
 
 The next group of files presents the scripts that can be run in Flask. 
 
-- process_data.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/process_data.py) - This executes the functions presented in the ETL Pipeline Preparation.ipynb file.
+- process_data.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/data/process_data.py) - This executes the functions presented in the ETL Pipeline Preparation.ipynb file.
 
-- train_classifier.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/train_classifier.py) - This executes the functions presented in the ML Pipeline Preparation.ipynb file.
+- train_classifier.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/models/train_classifier.py) - This executes the functions presented in the ML Pipeline Preparation.ipynb file.
 
-- run.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/run.py) - This file provideds script that runs the web app
+- run.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/app/run.py) - This file provideds script that runs the web app
 
 Lastly there are two datset files:
 - disaster_messages.csv (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/disaster_messages.csv) - this file contains all of the messages that the model wil be trained on
