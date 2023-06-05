@@ -24,9 +24,9 @@ The next group of files presents the scripts that can be run in Flask.
 - run.py (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/app/run.py) - This file provideds script that runs the web app
 
 Lastly there are two datset files:
-- disaster_messages.csv (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/disaster_messages.csv) - this file contains all of the messages that the model wil be trained on
+- disaster_messages.csv (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/data/disaster_messages.csv) - this file contains all of the messages that the model wil be trained on
 
-- disaster_categories.csv (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/disaster_categories.csv) - here we have data showing which categories each messages relates to
+- disaster_categories.csv (https://github.com/LDurham89/Machine-Learning-project-Disaster-Response/blob/main/data/disaster_categories.csv) - here we have data showing which categories each messages relates to
 
 __Usage instructions:__  
 
